@@ -6,86 +6,116 @@
     <title>Streamify - Video Streaming</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0d0d0d;
-            color: #d4d4d4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1a1a1a;
-            padding: 20px 40px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo img {
-            height: 80px;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-        nav a {
-            color: #00ff99;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-        nav a:hover {
-            color: #ffffff;
-        }
-        main {
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .video-player {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-        video {
-            width: 85%;
-            border-radius: 10px;
-        }
-        .download-btn {
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #00ff99;
-            color: #0d0d0d;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        .download-btn:hover {
-            background-color: #00cc7a;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #1a1a1a;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #888;
-        }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d0d;
+    color: #d4d4d4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 20px 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 80px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0;
+}
+
+nav a {
+    color: #00ff99;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+main {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.video-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+}
+
+/* 🔥 Responsive Design for Mobile 🔥 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .logo img {
+        height: 60px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .video-player {
+        width: 95%;
+        padding: 20px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 250px; /* Adjusts video size for mobile */
+    }
+
+    .download-btn {
+        width: 90%;
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #1a1a1a;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #888;
+}
+
     </style>
 <script>
     function playVideo() {
