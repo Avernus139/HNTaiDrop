@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamify - Video Streaming</title>
     <link rel="stylesheet" href="styles.css">
+    
     <style>
+        /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #0d0d0d;
@@ -13,71 +15,133 @@
             margin: 0;
             padding: 0;
         }
+
+        /* Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: #1a1a1a;
-            padding: 20px 40px;
+            padding: 15px 20px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
         }
+
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
         }
+
         .logo img {
-            height: 80px;
+            height: 50px;
         }
+
+        .logo h1 {
+            color: #00ff99;
+            font-size: 22px;
+            margin: 0;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 20px;
+            padding: 0;
         }
+
         nav a {
             color: #00ff99;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
-            cursor: pointer;
         }
+
         nav a:hover {
             color: #ffffff;
         }
-        main {
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .video-player {
+
+        /* Video Player Section */
+        .video-container {
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin: 40px auto;
             background: #1a1a1a;
-            padding: 30px;
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 95%;
             position: relative;
         }
-        video {
-            width: 85%;
-            border-radius: 10px;
+
+        .video-thumbnail {
+            width: 100%;
+            position: relative;
+            cursor: pointer;
         }
+
+        .video-thumbnail img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .play-button img {
+            width: 40px;
+        }
+
+        .last-seen {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #ff4d6d;
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            display: none;
+            border-radius: 12px;
+        }
+
+        /* Download Button */
         .download-btn {
             margin-top: 20px;
             padding: 12px 24px;
             background-color: #00ff99;
             color: #0d0d0d;
+            font-size: 18px;
+            font-weight: bold;
             border: none;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
             transition: background 0.3s ease;
+            text-align: center;
+            width: 90%;
+            text-decoration: none;
+            display: block;
         }
+
         .download-btn:hover {
             background-color: #00cc7a;
         }
+
+        /* Footer */
         footer {
             text-align: center;
             padding: 15px;
@@ -86,45 +150,45 @@
             font-size: 14px;
             color: #888;
         }
-    </style>
-<script>
-    function playVideo() {
-        // Hide the thumbnail
-        document.getElementById("video-thumbnail").style.display = "none";
 
-        // Get the iframe and set the video source with autoplay enabled
-        var videoFrame = document.getElementById("video-frame");
-        videoFrame.src = "https://www.hentaicity.com/embed/E0l7gdeVxUP?autoplay=1"; 
-        videoFrame.style.display = "block";
-    }
-</script>
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .video-container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            .download-btn {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const video = document.querySelector("video");
-            video.addEventListener("keydown", function(event) {
-                if (event.key === "ArrowRight") {
-                    video.currentTime += 10;
-                } else if (event.key === "ArrowLeft") {
-                    video.currentTime -= 10;
-                }
-            });
-            
-            const navLinks = document.querySelectorAll("nav a");
-            navLinks.forEach(link => {
-                link.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    alert("This section is still under development.");
-                });
-            });
-        });
+        function playVideo() {
+            document.getElementById("video-thumbnail").style.display = "none";
+            document.getElementById("video-frame").style.display = "block";
+            document.getElementById("video-frame").src = "https://iframe.mediadelivery.net/embed/381405/5a680a7b-3eaa-4e77-8444-491b595fbd77?autoplay=true&loop=false&muted=false&preload=true&responsive=true";
+        }
     </script>
+
 </head>
 <body>
+
     <header>
         <div class="logo">
-            <img src="logo.png" alt="Logo">
-            <h1 style="color: #00ff99;">Streamify</h1>
+            <img src="fingerprint-icon.png" alt="Streamify Logo">
+            <h1>Streamify</h1>
         </div>
         <nav>
             <ul>
@@ -135,121 +199,29 @@
             </ul>
         </nav>
     </header>
-    
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Streamify - Video Streaming</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0d0d0d;
-            color: #d4d4d4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1a1a1a;
-            padding: 20px 40px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo img {
-            height: 80px;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
-        nav a {
-            color: #00ff99;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-            cursor: pointer;
-        }
-        nav a:hover {
-            color: #ffffff;
-        }
-        main {
-            padding: 50px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .video-player {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-            position: relative;
-            width: 100%;
-            max-width: 960px;
-        }
-        iframe {
-            width: 100%;
-            height: 540px;
-            border: none;
-        }
-        .download-btn {
-            margin-top: 20px;
-            padding: 12px 24px;
-            background-color: #00ff99;
-            color: #0d0d0d;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background 0.3s ease;
-        }
-        .download-btn:hover {
-            background-color: #00cc7a;
-        }
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #1a1a1a;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #888;
-        }
-    </style>
-    <script>
-        function downloadVideo() {
-            window.location.href = "https://mega.nz/file/8ssRjQKY#wZAv7rQnH5PYvIO4xkjd0uRT4R01eNERbdJLcOx_Pxs"; // Replace with actual download link
-        }
-    </script>
-</head>
-<body>
-   
-    
-    <main>
-    <section class="video-player">
-        <iframe src="https://iframe.mediadelivery.net/embed/381405/5a680a7b-3eaa-4e77-8444-491b595fbd77?autoplay=true&loop=false&muted=false&preload=true&responsive=true" 
-                loading="lazy" 
-                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
-                allowfullscreen="true">
-        </iframe>
-        <button class="download-btn" onclick="downloadVideo()">Download Video</button>
-    </section>
-</main>
 
-<footer>
-    <p>&copy; 2025 Streamify. All rights reserved.</p>
-</footer>
+    <main>
+        <div class="video-container">
+            <!-- Video Thumbnail -->
+            <div class="video-thumbnail" id="video-thumbnail" onclick="playVideo()">
+                <img src="thumbnail.jpg" alt="Video Thumbnail">
+                <div class="play-button">
+                    <img src="play-icon.png" alt="Play">
+                </div>
+                <div class="last-seen">Last Seen <b>12:11</b></div>
+            </div>
+
+            <!-- Embedded Video -->
+            <iframe id="video-frame" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <!-- Download Button -->
+            <a href="https://mega.nz/file/8ssRjQKY#wZAv7rQnH5PYvIO4xkjd0uRT4R01eNERbdJLcOx_Pxs" class="download-btn" download>Download Video</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Streamify. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
