@@ -3,60 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Posts</title>
-    <style>
-        body {
-            background-color: #10221b;
-            color: #d4e0d1;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        .header {
-            padding: 20px;
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .post-container {
-            width: 90%;
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: #7a9c7c;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-        }
-        .post-container img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-    </style>
+    <title>My Link Page</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <h1>@my_username</h1>
-        <p>💖 All Posts Here 💖</p>
+    <div class="container">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>@my_username</h1>
+            <p>💖 All Posts Here 💖</p>
+        </div>
+        
+        <div class="links">
+            <a href="post1.html" class="link-button">
+                <img src="avatar1.jpg" alt="Post 1"> POST #1
+            </a>
+            <a href="post2.html" class="link-button">
+                <img src="avatar2.jpg" alt="Post 2"> POST #2
+            </a>
+            <a href="post3.html" class="link-button">
+                <img src="avatar3.jpg" alt="Post 3"> POST #3
+            </a>
+        </div>
     </div>
-
-    <a href="post1.html" class="post-container">
-        <img src="avatar1.jpg" alt="Post 1">
-        <span>POST #1</span>
-    </a>
-
-    <a href="post2.html" class="post-container">
-        <img src="avatar2.jpg" alt="Post 2">
-        <span>POST #2</span>
-    </a>
-
-    <a href="post3.html" class="post-container">
-        <img src="avatar3.jpg" alt="Post 3">
-        <span>POST #3</span>
-    </a>
 </body>
 </html>
