@@ -57,12 +57,22 @@
             border-radius: 12px;
         }
 
-        /* Ad Banner */
-        .ad-banner {
-            width: 100%;
-            max-width: 728px; /* Standard leaderboard ad size */
-            margin-bottom: 20px;
+        /* Ad Grid */
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        .ad-item {
             text-align: center;
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Download Button */
@@ -108,8 +118,8 @@
                 height: 250px;
             }
 
-            .ad-banner {
-                max-width: 100%;
+            .ad-grid {
+                grid-template-columns: 1fr;
             }
 
             .download-btn {
@@ -130,22 +140,43 @@
 
     <main>
         <div class="video-container">
-            <!-- Ad Banner (Above Video) -->
-            <div class="ad-banner">
-                <!-- JuicyAds Code -->
-                <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-                <ins id="1080610" data-width="300" data-height="250"></ins>
-                <script type="text/javascript" data-cfasync="false" async>
-                    (adsbyjuicy = window.adsbyjuicy || []).push({'adzone': 1080610});
-                </script>
-            </div>
-
             <!-- Embedded Video -->
             <iframe src="https://iframe.mediadelivery.net/embed/381405/be318995-453f-4527-b6f8-2a929280c377?autoplay=true&loop=false&muted=false&preload=true&responsive=true" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             <!-- Download Button -->
             <a href="https://mega.nz/file/xtRHSLRK#OeRXiBkBfbVMgkeuMtmx61tv9lxt4YmB4BIbNAmvC0A" class="download-btn" download>Download Video</a>
         </div>
+
+        <!-- Ad Grid Section -->
+        <div class="ad-grid">
+            <div class="ad-item">
+                <!-- JuicyAds Ad 1 -->
+                <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+                <ins id="1080613" data-width="300" data-height="250"></ins>
+                <script type="text/javascript" data-cfasync="false" async>
+                    (adsbyjuicy = window.adsbyjuicy || []).push({'adzone': 1080613});
+                </script>
+            </div>
+
+            <div class="ad-item">
+                <!-- JuicyAds Ad 2 -->
+                <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+                <ins id="1080614" data-width="300" data-height="250"></ins>
+                <script type="text/javascript" data-cfasync="false" async>
+                    (adsbyjuicy = window.adsbyjuicy || []).push({'adzone': 1080614});
+                </script>
+            </div>
+
+            <div class="ad-item">
+                <!-- JuicyAds Ad 3 -->
+                <script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+                <ins id="1080615" data-width="300" data-height="250"></ins>
+                <script type="text/javascript" data-cfasync="false" async>
+                    (adsbyjuicy = window.adsbyjuicy || []).push({'adzone': 1080615});
+                </script>
+            </div>
+        </div>
+
     </main>
 
     <footer>
