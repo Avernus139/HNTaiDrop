@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamify - Video Streaming</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0d0d0d;
+            color: #d4d4d4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a1a1a;
+            padding: 15px 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo h1 {
+            color: #00ff99;
+            font-size: 22px;
+            margin: 0;
+        }
+        
+        .logo img {
+            height: 80px;
+        }
+
+        /* Video Container */
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px auto;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 95%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+        }
+
+        /* Download Button */
+        .download-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #00ff99;
+            color: #0d0d0d;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-align: center;
+            width: 90%;
+            text-decoration: none;
+            display: block;
+        }
+
+        .download-btn:hover {
+            background-color: #00cc7a;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #1a1a1a;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .video-container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            iframe {
+                height: 250px;
+            }
+
+            .download-btn {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Streamify Logo">
+            <h1>Streamify</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="video-container">
+            <!-- Embedded Video -->
+            <iframe src="https://iframe.mediadelivery.net/embed/381405/be318995-453f-4527-b6f8-2a929280c377?autoplay=true&loop=false&muted=false&preload=true&responsive=true"" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <!-- Download Button -->
+            <a href="https://mega.nz/file/xtRHSLRK#OeRXiBkBfbVMgkeuMtmx61tv9lxt4YmB4BIbNAmvC0A" class="download-btn" download>Download Video</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Streamify. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
